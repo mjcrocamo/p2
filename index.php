@@ -13,11 +13,11 @@ require 'logic.php';
           integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO'
           crossorigin='anonymous'>
     <link rel="stylesheet" type="text/css" media="screen" href="/styles/styles.css" />
-    <title>Dad's the Word</title>
+    <title>What's in a Pirate's Name?</title>
 </head>
 <body>
 
-    <h1>Dad's the Word</h1>   
+    <h1>What's in a Pirate's Name?</h1>   
 
 </body>
 </html>
