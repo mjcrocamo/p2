@@ -3,7 +3,8 @@
 + Production URL: <http://p2.maggiecroc11.me>
 
 ## Outside resources
-*your list of outside resources go here*
++ https://me.me/t/talk-like-a-pirate-day 
+The photo was used to come up with the random phrases
 
 ## 3 Unique inputs
 
