@@ -18,10 +18,10 @@ if(isset($_SESSION['results'])) {
 
 # Logic to generate random image
 $imageURLs = [
-    "images/bird.png",
-    "images/penguin.png",
-    "images/pirate-pipe.png",
-    "images/pirate-skull.png"
+    "images/bird_28.png",
+    "images/penguin_28.png",
+    "images/pirate-pipe_28.png",
+    "images/pirate-skull_28.png"
 ];
 
 $randomImageKey = array_rand($imageURLs, 1);
