@@ -1,5 +1,6 @@
 <?php
 require 'logic.php';
+require 'includes/helpers.php';
 ?>
 
 <!DOCTYPE html>
@@ -23,12 +24,11 @@ require 'logic.php';
         Enter your first name, your birthday month, and last name 
         to find out!</h3>
 
-    <form method="POST" action="searchname.php">
-
+    <form method="GET" action="searchname.php">
         <fieldset>
             <div class="formlabel">Enter First Name</div>
             <label>
-                <input type="text" name="firstname" value="<?= $firstName ?? '' ?>">
+                <input type="text" name="firstName" value="<?= $firstName ?? '' ?>">
             </label>
 
             <div class="formlabel">Select Birthday Month</div>
@@ -85,39 +85,55 @@ require 'logic.php';
 
             <div class="formlabel">Enter Last Name</div>
             <label>
-                <input type='text' name='lastname' value='<?= $lastName ?? '' ?>'>
+                <input type='text' name='lastName' value='<?= $lastName ?? '' ?>'>
             </label>
+
+            <div class="check">
+            <label>
+                <input type='checkbox'
+                       name="reverseName" <?php if (isset($reverseName) and $reverseName) echo 'checked' ?> >
+                Reverse Name
+            </label>
+            </div>
         </fieldset>
 
         <input type="submit" value="Discover Ye'Old Pirate Name" class="btn btn-primary">
+
+        <?php if($hasErrors): ?>
+            <div class="alerts">
+                <div class="alert alert-danger">
+                    <ul>
+                        <?php foreach($errors as $error): ?>
+                            <li><?= $error ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            </div>
+        <?php endif ?>
     </form>
 
+   <?php if(!$hasErrors): ?>
     <div id="results">
-       <!-- <?php if (isset($firstName) and isset($month) and isset($lastName)): ?>
-            <div class="alerts">
-                <div class="alert alert-primary" role="alert">
-                    Your input name was <em><?= $firstName ?></em> <em><?= $lastName ?></em>.
-                    Your input month was <em><?= $month ?></em>.
-                </div>
-            </div>
-        <?php endif; ?>-->
-
-        <?php if (isset($newPirateName) and empty($newPirateName)): ?>
-            <div class="alerts">
-                <div class="alert alert-warning" role="alert">
-                    No results found
-                </div>
-            </div>
-        <?php endif; ?>
-
-        <?php if (isset($newPirateName) and empty($newPirateName) == false): ?>
+        <?php if (isset($newPirateName) and !$reverseName): ?>
             <div class="piratename">
-                <div class="pirate">Your pirate name is:</div> 
-                <em><?= $newPirateName[0] ?></em> <em><?= $newPirateName[1] ?></em> <em><?= $newPirateName[2] ?></em>
+                <div class="pirate">Your pirate name is:</div>
+                <em><?= sanitize($newPirateName["first"]) ?></em>
+                <em><?= sanitize($newPirateName["middle"])?></em>
+                <em><?= sanitize($newPirateName["last"]) ?></em>
             </div>
-            <img class="piratepic" src=<?= $image ?> alt="Pirate Skull and Bones">
+            <img class="piratepic" src=<?= $image ?> />
+        <?php endif ?>
+        <?php if (isset($newPirateName) and $reverseName): ?>
+            <div class="piratename">
+                <div class="pirate">Your pirate name is:</div>
+                <em><?= sanitize($newPirateName["last"]) ?></em>
+                <em><?= sanitize($newPirateName["middle"])?></em>
+                <em><?= sanitize($newPirateName["first"]) ?></em>
+            </div>
+            <img class="piratepic" src=<?= $image ?> />
         <?php endif ?>
     </div>
+   <?php endif; ?>
     </section>
 </body>
 </html>

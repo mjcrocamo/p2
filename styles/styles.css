@@ -14,13 +14,18 @@ html {
     position: relative;
 }
 
+/* https://css-tricks.com/perfect-full-page-background-image */
+/* for background image that fits the screen */
 /* responsive body */
 body {
-    background-image: url("/images/map_background4.jpg");
-    background-repeat: no-repeat;
     height: 100%;
     min-width: 100%;
     position: relative;
+    background: url("/images/map_background4.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 /* size/ position of randomly generated picture */
@@ -33,7 +38,14 @@ body {
 /* font style for the form labels */
 .formlabel {
     font-size: 25px;
-    font-weight: medium;
+    font-weight: normal;
+}
+
+/* font style for checkbox */
+
+.check {
+    font-size: 20px;
+    font-weight: normal;
 }
 
 /* font style for the pirate name */

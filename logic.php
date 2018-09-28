@@ -6,6 +6,9 @@
  */
 session_start();
 
+$hasErrors = false;
+$reverseName = false;
+
 # Get `results` data from session, if available
 if(isset($_SESSION['results'])) {
     $results = $_SESSION['results'];
@@ -14,6 +17,10 @@ if(isset($_SESSION['results'])) {
     $month = $results['month'];
     $lastName = $results['lastName'];
     $newPirateName = $results['newPirateName'];
+
+    $errors = $results['errors'];
+    $hasErrors = $results['hasErrors'];
+    $reverseName = $results["reverseName"];
 }
 
 # Logic to generate random image
