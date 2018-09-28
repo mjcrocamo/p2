@@ -3,7 +3,7 @@
 + Production URL: <http://p2.maggiecroc11.me>
 
 ## Outside resources
-#####The photo in the link below was used to come up with some of the random names used to generate the pirate names
+##### The photo in the link below was used to come up with some of the random names used to generate the pirate names
 + https://www.pinterest.com/pin/59532026307187179/?lp=true
 
 #### Sources for Images
@@ -13,7 +13,7 @@
 + https://pixabay.com/en/pirate-skull-bone-hat-tobacco-354246/
 + https://www.dreamstime.com/stock-photo-aged-pirates-treasure-map-background-illustration-image71899213
 
-####CSS Resources
+#### CSS Resources
 + https://css-tricks.com/perfect-full-page-background-image
 
  
